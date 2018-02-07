@@ -2,7 +2,7 @@
 js_事件
 
 
-      事件对象
+   事件对象
       
 		    在触发DOM上的某个事件时，会产生一个事件对象  event, 这个对象中包含着
 		    所有与事件有关的信息，包括导致事件的元素，事件的类型以及其他与特定事件相关的信息，
@@ -31,12 +31,10 @@ js_事件
                  }
 
 
-
+  DOM中的事件对象
 
 		currentTarget     事件处理程序当前正在处理事件的那个元素
 		target         事件目标
-
-
 
 		在事件处理程序内部,对象this始终等于currentTarget值,而target则只包含事件的实际目标
 			
@@ -71,3 +69,8 @@ js_事件
 	console.log(this)           //<body>...</boby>
         }
 
+       当点击这个例子中的按钮时,this和currentTarget都等于document.body,
+       因为事件处理程序是注册到这个元素上的,然而, " target元素却等于按钮元素 ",
+       因为他是click事件正真的目标,由于按钮上并没有注册事件处理程序,
+       结果click事件就冒泡到了document.body,在哪里事件才能得到处理
+      
