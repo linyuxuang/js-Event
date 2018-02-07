@@ -38,8 +38,36 @@ js_事件
 
 
 
+		在事件处理程序内部,对象this始终等于currentTarget值,而target则只包含事件的实际目标
+			
+			
+			如果直接将事件处理程序指定给了目标元素,
+			则this,currentTarget和target包含相同的值(如下例子)
+			
+			var btn=document.getElementById("btn1");
 
+			   btn.onclick=function(){
+			   
+			    //<input type="button" name="" id="btn1" value="按钮"/>
+				console.log(event.currentTarget);  
+				
+			    //<input type="button" name="" id="btn1" value="按钮"/>
+				console.log(event.target);  
+				
+			    //<input type="button" name="" id="btn1" value="按钮"/>
+				console.log(this)        
+			} 
 
+            这个例子检测了currentTarget，target，this的值，由于click事件的目标都是按钮，因此
+	    这三个值是相等的，
+	    
+	    如果事件处理程序存在于按钮的父节点，那么这些值是不同的
+	    
+	 如下例子
 
-
+	document.body.onclick=function(){
+	console.log(event.currentTarget);   //<body>...</boby>
+	console.log(event.target);    //<input type="button" name="" id="btn1" value="按钮"/>
+	console.log(this)           //<body>...</boby>
+        }
 
