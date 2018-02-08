@@ -141,7 +141,14 @@ js_事件
 	}
 
 	     
-	     
+	     当点击这个例子按钮时,首先执行的事件处理程序在捕获阶段触发的
+	     添加到document.body中的哪一个 ; 结果输出  eventPhase等于  1;
+	      接着会触发在按钮上注册的事件处理程序,此时eventPhase等于 2
+	     最后一个被触发的事件程序,是在冒泡阶段执行的添加到document.body上的哪一个,
+	     显示 eventPhase等于 3,    
+	     而当eventPhase等于 2 时, this , target, currentTarget 始终都是相等的
+
+
 	     
 	     
 	     
