@@ -95,6 +95,23 @@ js_事件
 	     
 	     
 	     
-	     
+    stopPropagation() 方法用于立即停止事件在DOM层次中的传播,即取消进一步事件捕获或冒泡
+		  
+		    
+	例如:直接添加到一个按钮事件处理程序可以调用stopPropagation(),从而避免触发注册在document.body
+             上面事件处理程序,
+		        
+			
+		如下例子:
+				
+	       var btn1=document.getElementById("btn1");		
+		  btn1.onclick=function(event){
+			  alert("input") 	  	
+			 event.stopPropagation();   
+	             }
+		     
+                document.body.onclick=function(){
+                  	alert("body")
+                  }	     
 	     
 	     
