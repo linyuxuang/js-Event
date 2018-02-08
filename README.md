@@ -74,3 +74,27 @@ js_事件
        因为他是click事件正真的目标,由于按钮上并没有注册事件处理程序,
        结果click事件就冒泡到了document.body,在哪里事件才能得到处理
       
+      
+      
+      
+      
+      preventDefault()方法阻止特定事件的默认行为,
+        
+
+		例如:链接的默认行为就是在单击时会导航到href 特性指定的URL,如果想阻止链接这一默认行为,
+		那么通过链接的onclick 事件处理程序可以取消它,
+      
+		 如下例子:
+      
+      	         <a href="indexa.html" id="a">连接</a>	
+		 
+		    var a=document.getElementById("a");		
+		     a.onclick=function(event){
+		      event.preventDefault();
+	           }
+	     
+	     
+	     
+	     
+	     
+	     
