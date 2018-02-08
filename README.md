@@ -115,3 +115,40 @@ js_事件
                   }	     
 	     
 	     
+	     
+	  eventPhase 事件对象属性,可以用来确定事件当前正位于事件流的那个阶段,
+   	 
+		 如果是在捕获阶段调用事件处理程序,那么eventPhase 等于 1;
+		 如果事件处理程序处于对象上  则 eventPhase 等于 2;
+		 如果是在冒泡阶段调用事件处理程序, eventPhase 等于 3
+			
+	     注意  "处理目标" 发生在冒泡阶段,但eventPhase仍然一直等 2,
+			 
+	看下面例子:
+			  
+	var btn1=document.getElementById("btn1");
+
+        btn1.onclick=function(event){
+        	console.log(event.eventPhase)    //2
+        };
+
+	document.body.addEventListener("click",function(event){
+		console.log(event.eventPhase)
+	},true);   // 1
+	
+	document.body.onclick=function(event){
+		console.log(event.eventPhase)   //3
+	}
+
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
