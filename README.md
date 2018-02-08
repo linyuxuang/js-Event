@@ -56,12 +56,12 @@ js_事件
 				console.log(this)        
 			} 
 
-                * 这个例子检测了currentTarget，target，this的值，由于click事件的目标都是按钮，因此
-	          这三个值是相等的，
+                    * 这个例子检测了currentTarget，target，this的值，由于click事件的目标都是按钮，
+		       因此这三个值是相等的，
 	    
-	     * 如果事件处理程序存在于按钮的父节点，那么这些值是不同的
+	            * 如果事件处理程序存在于按钮的父节点，那么这些值是不同的
 	    
-	 如下例子
+	      如下例子
 
 		document.body.onclick=function(){
 		console.log(event.currentTarget);   //<body>...</boby>
@@ -78,7 +78,7 @@ js_事件
       
       
       
-      preventDefault()方法阻止特定事件的默认行为,
+ preventDefault()方法阻止特定事件的默认行为,
         
 
 		例如:链接的默认行为就是在单击时会导航到href 特性指定的URL,如果想阻止链接这一默认行为,
@@ -95,7 +95,7 @@ js_事件
 	     
 	     
 	     
-    stopPropagation() 方法用于立即停止事件在DOM层次中的传播,即取消进一步事件捕获或冒泡
+ stopPropagation() 方法用于立即停止事件在DOM层次中的传播,即取消进一步事件捕获或冒泡
 		  
 		    
 	例如:直接添加到一个按钮事件处理程序可以调用stopPropagation(),从而避免触发注册在document.body
@@ -113,10 +113,29 @@ js_事件
                 document.body.onclick=function(){
                   	alert("body")
                   }	     
+		  
 	     
+相应的cancelBubble 属性与DOM中 stopPropagation() 方法作用相同,
+  
+
+		都是用来停止事件冒泡,由于IE不支持事件捕获,因此只能取消事件冒泡,
+		但stopPropagation() 可以同时取消事件捕获和冒泡,
+		
+		 如下例子:
+
+		      var btn1=document.getElementById("btn1");		
+			    btn1.onclick=function(event){
+				     alert("input") 	  	
+				    event.cancelBubble=true; 
+			     }
+
+			    document.body.onclick=function(){
+				alert("body")
+			      }	     
+     	     
 	     
-	     
-	  eventPhase 事件对象属性,可以用来确定事件当前正位于事件流的那个阶段,
+ eventPhase 事件对象属性,可以用来确定事件当前正位于事件流的那个阶段,
+ 
    	 
 		 如果是在捕获阶段调用事件处理程序,那么eventPhase 等于 1;
 		 如果事件处理程序处于对象上  则 eventPhase 等于 2;
