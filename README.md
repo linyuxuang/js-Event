@@ -63,18 +63,18 @@ js_事件
 	    
 	 如下例子
 
-	document.body.onclick=function(){
-	console.log(event.currentTarget);   //<body>...</boby>
-	console.log(event.target);    //<input type="button" name="" id="btn1" value="按钮"/>
-	console.log(this)           //<body>...</boby>
-        }
+		document.body.onclick=function(){
+		console.log(event.currentTarget);   //<body>...</boby>
+		console.log(event.target);    //<input type="button" name="" id="btn1" value="按钮"/>
+		console.log(this)           //<body>...</boby>
+		}
 
-      * 当点击这个例子中的按钮时,this和currentTarget都等于document.body,
-       因为事件处理程序是注册到这个元素上的,然而, " target元素却等于按钮元素 ",
-       因为他是click事件正真的目标,由于按钮上并没有注册事件处理程序,
-       结果click事件就冒泡到了document.body,在哪里事件才能得到处理
-      
-      
+		      * 当点击这个例子中的按钮时,this和currentTarget都等于document.body,
+		       因为事件处理程序是注册到这个元素上的,然而, " target元素却等于按钮元素 ",
+		       因为他是click事件正真的目标,由于按钮上并没有注册事件处理程序,
+		       结果click事件就冒泡到了document.body,在哪里事件才能得到处理
+
+
       
       
       
