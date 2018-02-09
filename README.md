@@ -217,14 +217,17 @@ js_事件
 			       var btn = document.getElementById("div1");
 			          btn.onclick=function(event){
 
-				  event= EventUtil.getEvent(event)  
-                                }
+				  event= EventUtil.getEvent(event)  }
 
 
 			       在兼容DOM的浏览器中，event变量只是简单的传入传出，
 			       而在IE中，event参数是未定义的(undfined),因此就会返回window.event。
 			       将这一行代码添加到事件处理程序开头，就可以确保随时都可能使用event对象，
 			       而不必担心浏览器的兼容问题了
+
+
+
+
 
 
 
