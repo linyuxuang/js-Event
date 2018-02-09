@@ -219,15 +219,19 @@ js_事件
 
 				  event= EventUtil.getEvent(event)  
                                 }
-                       在兼容DOM的浏览器中，event变量只是简单的传入传出，
-		       而在IE中，event参数是未定义的(undfined),因此就会返回window.event。
-		       将这一行代码添加到事件处理程序开头，就可以确保随时都可能使用event对象，
-		       而不必担心浏览器的兼容问题了
 
 
-                       第二个：是getTarget()方法，他返回事件的目标,
-		              在这个方法内部，会检测event对象的target属性，如果存在则返回该属性值，
-			      否则,返回srcElement属性值，
+			       在兼容DOM的浏览器中，event变量只是简单的传入传出，
+			       而在IE中，event参数是未定义的(undfined),因此就会返回window.event。
+			       将这一行代码添加到事件处理程序开头，就可以确保随时都可能使用event对象，
+			       而不必担心浏览器的兼容问题了
+
+
+
+
+                          第二个：是getTarget()方法，他返回事件的目标,
+		                 在这个方法内部，会检测event对象的target属性，如果存在则返回该属性值，
+			         否则,返回srcElement属性值，
 			       
 			        可以像下面这样使用这个方法
 
