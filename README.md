@@ -299,7 +299,8 @@ js_事件
 
   scroll 当有滚动条，滚动以后触发(对window有效)
 
-           
+         clearTimeout() 方法可取消由 setTimeout() 方法设置的 timeoutRef。
+	 
 	 <body style="height: 700px;">  
        	<div style="width: 200px;height: 300px;background: #666666;position: absolute;"></div>
 
