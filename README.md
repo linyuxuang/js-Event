@@ -168,9 +168,86 @@ js_事件
 	     而当eventPhase等于 2 时, this , target, currentTarget 始终都是相等的
 
 
-	     
-	     
-	     
+
+跨浏览器的事件对象
+
+
+              		     var EventUtil = {
+			         addHandler: function(element, type, handler){
+					//省略的代码
+			           },
+				 getEvent: function(event){
+				      return event ? event : window.event;
+				  },
+				  getTarget: function(event){
+				      return event.target || event.srcElement;
+				     },
+			          preventDefault: function(event){
+				      if (event.preventDefault){
+					  event.preventDefault();
+					  } else {
+					  event.returnValue = false;
+				    	 }
+				    },
+				  removeHandler: function(element, type, handler){
+					    //省略的代码
+				     },
+			          stopPropagation: function(event){
+				      if (event.stopPropagation){
+					   event.stopPropagation();
+				    	 } else {
+					   event.cancelBubble = true;
+				    }
+				  }
+			      };
+			
+			
+                上面这个例子：我们为EventUtil添加了4个新方法。
+		
+		        第一个：getEvent(),他返回对event对象引用，考虑到IE中事件对象的位置不同
+		               可以使用这个方法来取得event()对象，而不必担心指定事件处理程序的方式，
+			     
+			      在使用这个方法时，必须假设一个事件对象传入到事件处理程序中，而且要把
+			      该变量传给这个方法：
+			 
+			    如下例子  ：
+
+                                <div id="div1">55555</div>
+			
+			       var btn = document.getElementById("div1");
+			          btn.onclick=function(event){
+
+				  event= EventUtil.getEvent(event)  
+                                }
+                       在兼容DOM的浏览器中，event变量只是简单的传入传出，
+		       而在IE中，event参数是未定义的(undfined),因此就会返回window.event。
+		       将这一行代码添加到事件处理程序开头，就可以确保随时都可能使用event对象，
+		       而不必担心浏览器的兼容问题了
+
+
+                       第二个：是getTarget()方法，他返回事件的目标,
+		              在这个方法内部，会检测event对象的target属性，如果存在则返回该属性值，
+			      否则,返回srcElement属性值，
+			       
+			        可以像下面这样使用这个方法
+
+                 			
+			       var btn = document.getElementById("div1");
+			        btn.onclick=function(event){
+
+				  event= EventUtil.getEvent(event)
+
+				  var target=EventUtil.getTarget(event);
+
+				 alert(event.target)   //	<div id="div1">55555</div>
+			     }
+
+
+
+
+
+
+
 	     
 	     
 	     
