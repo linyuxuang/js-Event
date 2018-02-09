@@ -242,6 +242,20 @@ js_事件
 
 
 
+    第三个：是preventDefault()方法，用于取消事件默认行为，在传入event对象后，这个方法会检查是否存在
+            preventDefault()方法，如果存在则调用该方法，如果是preventDefault()不存在，
+	    则将returnValue()方法设置为false，
+	    
+	     下面例子
+	              	<a id="a" href="index12.html">a</a>
+	      
+	             var btn = document.getElementById("a");
+		          btn.onclick=function(event){
+
+			  event= EventUtil.getEvent(event)
+
+			  EventUtil.preventDefault(event);
+		        }                           
 
 
 
