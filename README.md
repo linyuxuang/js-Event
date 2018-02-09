@@ -296,3 +296,25 @@ js_事件
 	     }
 
 
+
+  scroll 当有滚动条，滚动以后触发(对window有效)
+
+           
+	 <body style="height: 700px;">  
+       	<div style="width: 200px;height: 300px;background: #666666;position: absolute;"></div>
+
+		function callback(){
+		    //do something
+		    console.log('scroll触发了');
+		}
+
+		   var timeoutRef;
+		     window.addEventListener('scroll' , function(){
+		    if(timeoutRef){
+			clearTimeout(timeoutRef);
+		    }
+		    timeoutRef = setTimeout(callback , 50);
+		})
+
+
+
