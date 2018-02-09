@@ -279,6 +279,20 @@ js_事件
      load（加载完dom后开始执行）unload(切换本页面后执行,它一般用在清除引用)     
 	     
 	     
-	     
-	     
-	     
+ 
+   onresize:  当浏览器被调整到一个新的高度或者宽度时，就会触发onresize事件
+    
+               注意这个事件只能在window上有效
+
+	    例子:window.onresize监听div和屏幕的改变
+
+	    <label id="show"></label>
+
+	     window.onresize = adjuest;
+	     adjuest();
+	     function adjuest(){
+	       var label = document.getElementById("show");
+	       label.innerHTML = "width = "+window.innerWidth+";height="+window.innerHeight;
+	     }
+
+
