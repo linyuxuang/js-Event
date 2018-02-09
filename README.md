@@ -228,13 +228,49 @@ js_事件
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           第二个：是getTarget()方法，他返回事件的目标,
 		                 在这个方法内部，会检测event对象的target属性，如果存在则返回该属性值，
 			         否则,返回srcElement属性值，
 			       
-			        可以像下面这样使用这个方法
-                 			
-			       var btn = document.getElementById("div1");
+			        可以像下面这样使用这个方法
+			       var btn = document.getElementById("div1");
 			        btn.onclick=function(event){
 
 				  event= EventUtil.getEvent(event)
