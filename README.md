@@ -259,7 +259,22 @@ js_事件
 
 
 
-
+              第四个: stopPropagation()方法,其实现方式类似, 首先尝试使用DOM方法阻止事件流,
+              否则就使用cancelBubble属性,
+                 
+                  来看下面例子:
+			              var btn = document.getElementById("div1");
+			                 btn.onclick=function(event){
+                                            alert("div");
+			      	          event= EventUtil.getEvent(event);
+			      	       
+			      	          EventUtil.stopPropagation(event);
+			      	       }
+			               
+			               document.body.onclick=function(){
+			               	alert("body");
+			               }
+			               
 	     
 	     
 	     
