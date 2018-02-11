@@ -366,9 +366,36 @@ js_事件
 	  document.getElementById("div1").style.background="green"
 	 }
 	 
-	     
-	     
-	     
+       注意：
+	    只有在同一个元素上相继触发 mousedown 和 mouseup 事件，才会触发click事件，
+	    如果mousedown 或 mouseup中一个被取消，就不会触发click事件。
+	    类似的，只有触发两次click事件，才会触发dbclick事件，如果有代码阻止了连续两次
+	    触发click事件（可能直接取消click，也可能通过取消mousedown 或 mouseup间接实现）
+	    那么就不会触发dbclick事件了，
+	    
+	      这四个事件触发顺序
+	      
+	        1：mousedown
+	        2：mouseup 
+	        3:click
+	        4: mousedown
+	        5: mouseup
+	        6:click
+	        7:dbclick
+	  
+      显然，click与dbclick事件都会依赖于其他事件，  
+	    mousedown与mouseup不受其他事件影响
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	     
 	     
 	     
