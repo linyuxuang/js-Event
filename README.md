@@ -394,10 +394,22 @@ js_事件
 	  
 	  
 	  
-	  
-	  
-	  
-	  
+1：客户区坐标位置
+ 
+      clientX 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标。
+
+       客户区指的是当前窗口。
+
+      clientY 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（客户区）的垂直坐标。
+
+       客户区指的是当前窗口
+  
+     下面的例子可显示出事件发生时鼠标指针的坐标：
+	  
+        document.body.onclick = function(event) {
+          event = event || window.event;
+         console.log("水平坐标："+event.clientX+"垂直坐标："+event.clientY)
+       };	  
 	     
 	     
 	     
