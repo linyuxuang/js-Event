@@ -383,15 +383,17 @@ js_事件
 	        6:click
 	        7:dbclick
 	  
-      显然，click与dbclick事件都会依赖于其他事件，  
-	    mousedown与mouseup不受其他事件影响
+	      显然，click与dbclick事件都会依赖于其他事件，  
+		    mousedown与mouseup不受其他事件影响
 	  
-
-    鼠标事件还有一类滚轮事件，其实就是mousewheel事件，这个事件跟踪鼠标滚轮，类似于Mac的触摸板一样
-    
-      详情打开链接
-   http://www.zhangxinxu.com/wordpress/2013/04/js-mousewheel-dommousescroll-event/	  
 	  
+
+  鼠标事件还有一类滚轮事件，其实就是mousewheel事件，这个事件跟踪鼠标滚轮，类似于Mac的触摸板一样
+  
+
+	      详情打开链接
+	      http://www.zhangxinxu.com/wordpress/2013/04/js-mousewheel-dommousescroll-event/	  
+
 	  
 	  
 1：客户区坐标位置
