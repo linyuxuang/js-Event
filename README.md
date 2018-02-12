@@ -411,6 +411,7 @@ js_事件
 			 console.log("水平坐标："+event.clientX+"垂直坐标："+event.clientY)
 		       };	  
 
-	     
-	     
+
+	区分event对象中的[clientX,offsetX,screenX,pageX](详情点击链接)     
+	    https://www.jianshu.com/p/a52077e8369d 
 	
