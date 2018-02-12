@@ -415,3 +415,36 @@ js_事件
 	区分event对象中的[clientX,offsetX,screenX,pageX](详情点击链接)     
 	    https://www.jianshu.com/p/a52077e8369d 
 	
+
+键盘
+
+          
+	虽然鼠标事件主要是使用鼠标来触发，但在按下鼠标时键盘上某些键的状态也可以影响到所要采取的操作
+	这些修改键就是 Shift ，Ctrl，Alt，Meta,他们经常被用来修改鼠标事件行为，DOM为此规定了4个属性
+	表示这些修改键的状态，分别是：shiftKey，ctrlKey，altKey，metaKey，这些属性中包含都是布尔值
+	如果相应的键被按下，则值为true，否则是就是false。当某个鼠标事件发生时，通过检测这几个属性就可以
+	确定用户是否同时按下其中的键，
+	
+	 看下面例子
+	 
+	         <body onmousedown="isKeyPressed(event)">
+
+			function isKeyPressed(event)
+			{
+				var key=new Array();
+
+			  if (event.shiftKey)
+			    {
+			 key.push("shift")
+			    }
+			   if(event.ctrlKey){
+				 key.push("ctrl")
+			   }
+			   if(event.altKey){
+				key.push("alt")
+			   }
+			   if(event.metaKey){
+				key.push("meta")
+			   }
+			   console.log(key.join("."))
+			  }
