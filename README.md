@@ -404,13 +404,13 @@ js_事件
 
        客户区指的是当前窗口
   
-     下面的例子可显示出事件发生时鼠标指针的坐标：
-	  
-        document.body.onclick = function(event) {
-          event = event || window.event;
-         console.log("水平坐标："+event.clientX+"垂直坐标："+event.clientY)
-       };	  
-	     
+                   下面的例子可显示出事件发生时鼠标指针的坐标：
+
+			document.body.onclick = function(event) {
+			  event = event || window.event;
+			 console.log("水平坐标："+event.clientX+"垂直坐标："+event.clientY)
+		       };	  
+
 	     
 	     
 	
