@@ -468,5 +468,32 @@ https://www.jianshu.com/p/a52077e8369d
 		function fun(event){
 		   console.log(event.relatedTarget)  输出 <body>...</body>
 		 }
-      
+		 
+		 
+detail属性(表示点击几次个数)
+   
+	    DOM2级事件， 规范在event对象中还提供了 ”detail“ 属性，用于给出有关事件更多消息
+    	    对于鼠标事件来说，detail 中包含了一个数值，表示在给定的位置上发生多少次点击，在同
+	    一个元素上相继发生一次 mousedown 和一次 mouseup 事件算作一次点击，detail 属性
+	    从 1 开始计数，每次单击发生后都会递增，如果鼠标在mousedown和mouseup之间移动
+	    了位置，则detail 会被重置为 0。
+	   
+	   如下例子：
+	   
+	      <div id="div" onclick="fun(event)" >555</div>
+	   
+		function fun(event){
+		   console.log(event.detail)
+		}
 
+	
+	     IE也通过下列属性为鼠标事件提供了更多信息
+	   
+	     altLeft :布尔值，表示是否按下Alt键，如果altLeft的值为true，则altKey的值也为true
+	     ctrLeft :布尔值，表示是否按下Ctr键，如果ctrlLeft的值为true，则ctrlKey的值也为true
+	     offsetX： 表示鼠标指针位置相对于触发事件(目标元素)的对象的 x 坐标。 
+             offsetY： 表示鼠标指针位置相对于触发事件(目标元素)的对象的 y 坐标。
+	     shiftLeft：布尔值，表示是否按下Shift 键，如果shiftLeft的值为true，则shiftKey的值也为true
+	     
+
+	
