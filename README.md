@@ -450,3 +450,23 @@ https://www.jianshu.com/p/a52077e8369d
 			   }
 			   console.log(key.join("."))
 			  }
+
+
+
+相关元素
+
+       DOM通过event对象relatedTarget属性提供了相关元素信息，这个属性只对 mouseover 与 mouseout
+       事件有效，对于其他事件，这个属性值就是null，IE及版本之前 “fromElement” 属性中保存了相关元素
+       
+       在mouseout 事件触发时，IE的toElement 属性中保存着相关元素。(IE9支持所有这些属性)
+
+
+       如下例子：
+       
+       <div id="div" onmouseout="fun(event)" ></div>
+       
+        function fun(event){
+	   console.log(event.relatedTarget)  输出 <body>...</body>
+         }
+      
+
