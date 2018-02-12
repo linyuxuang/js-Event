@@ -461,7 +461,7 @@ https://www.jianshu.com/p/a52077e8369d
 	       在mouseout 事件触发时，IE的toElement 属性中保存着相关元素。(IE9支持所有这些属性)
 
 
-       如下例子：
+              如下例子：
        
 	       <div id="div" onmouseout="fun(event)" ></div>
 
