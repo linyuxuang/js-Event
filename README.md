@@ -332,32 +332,32 @@ js_事件
 鼠标与滚轮事件
 
 
-        abclick   用户双击鼠标触发 
-        mouseenter   用户移入鼠标触发(不会重复触发)
-	mouseleave  用户移除鼠标触发
-        mousemove  用户移入元素重复触发
+		abclick   用户双击鼠标触发 
+		mouseenter   用户移入鼠标触发(不会重复触发)
+		mouseleave  用户移除鼠标触发
+		mousemove  用户移入元素重复触发
+
+		mouseout  用户移出触发
+		mouseover  用户移出触发
 	
-        mouseout  用户移出触发
-        mouseover  用户移出触发
 	
+		  注意：mouseout与mouseleave区别
+
+		mouseout：  不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。
+		mouseleave：  只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件
+
+
+		mousedown 用户按下任意鼠标触发，
+		mouseup   用户松开鼠标触发
 	
-	  注意：mouseout与mouseleave区别
-	  
-	mouseout：  不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。
-        mouseleave：  只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件
-	       
-         
-        mousedown 用户按下任意鼠标触发，
-	mouseup   用户松开鼠标触发
-	
-	   一般mousedown与mouseup同时使用
+	       一般mousedown与mouseup同时使用
+	       
 	     例子：
 	     
-         <div id="div1"  onmousedown="fun1()"  onmouseup="fun2()" style="background: green;">
+           <div id="div1"  onmousedown="fun1()"  onmouseup="fun2()" style="background: green;">
    	   受到核辐射的附上几顿饭就
    	   是大你的房间萨芬驾驶飞机哈
          </div>
-
 
 	function fun1(){
            document.getElementById("div1").style.background="red"
