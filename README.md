@@ -414,8 +414,8 @@ js_事件
 		       };	  
 
 
-	区分event对象中的[clientX,offsetX,screenX,pageX](详情点击链接)     
-	    https://www.jianshu.com/p/a52077e8369d 
+区分event对象中的[clientX,offsetX,screenX,pageX](详情点击链接)     
+https://www.jianshu.com/p/a52077e8369d 
 	
 
 键盘
